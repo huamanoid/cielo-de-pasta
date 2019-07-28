@@ -1,0 +1,33 @@
+<% include partials/header.ejs %>
+
+
+ <div class="container white">
+
+    <div class="row">
+        
+    
+    <%menuitems.forEach(function(item){%>
+    
+        <div class="col-lg-4">
+            <div class="img-thumbnail rounded" style="background-color:black; padding:0">
+                 <img class="imz" src="<%=item.image%>" style="width:100%">
+             <p class="subtitle" style="color:white"><%=item.name%> </p> 
+             <p class = "subtitle">
+             <a href="/especial/<%= item._id %>">Read More</a>
+             </p>
+            </div>
+        </div>
+        
+    
+    <%})%>
+    
+      
+      
+        
+     
+     </div>
+
+   
+        
+
+<% include partials/footer.ejs %>

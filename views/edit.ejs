@@ -1,0 +1,31 @@
+<% include partials/header.ejs %>
+//?method=PUT ------------ methodoverwrite
+<div class="container">
+    <div class="row">
+       
+        <div style="width: 35%; margin: 300px auto;">
+            <form action="/especial/<%= dish._id%>?_method=PUT" method="POST">
+                <p style="color:white;">
+                        Edit <%=dish.name%>
+                </p>
+                    
+                <div class="form-group">
+                    <input class="form-control" type="text" name="dish[name]" value= "<%=dish.name%>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="number" name="price" value="<%=dish.price%>" min="0.01" step="0.01">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="dish[image]" value= "<%=dish.image%>">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-danger btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+</div>
+
+
+<% include partials/footer.ejs %>
