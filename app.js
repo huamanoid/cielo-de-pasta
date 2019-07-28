@@ -19,7 +19,16 @@ var commentRoutes         =require("./routes/comments"),
     indexRoutes           =require("./routes/index")
     
     app.use(express.static("public"));
-    mongoose.connect("mongodb://localhost/pasta_dishes");
+   // mongoose.connect("mongodb://localhost/pasta_dishes");
+    mongoose.connect('mongodb+srv://aman:letmein01@cricmaniac-ereth.mongodb.net/test?retryWrites=true&w=majority',
+{
+    useNewUrlParser: true,
+    useCreateIndex: true
+}).then(()=>{
+    console.log('connected to db');
+}).catch(err =>{
+    console.log('ERROR: err.message');
+});
     app.use(bodyParser.urlencoded({extended: true}));
     //conventional
     app.use(methodOverride("_method"));
